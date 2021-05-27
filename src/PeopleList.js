@@ -34,7 +34,14 @@ const PeopleList = () => {
 
   function addNewPerson() {
     const newPeople = [...people, newName];
+    console.log(newPeople)
     setPeople(newPeople);
+  }
+
+  function handleRemove(e) {
+    const newPeople = people.slice(0, -1);
+    setPeople(newPeople);
+    
   }
 
   return (
@@ -54,6 +61,7 @@ const PeopleList = () => {
           />
         </label>
         <button onClick={addNewPerson}>Add person</button>
+        <button onClick={(e) => handleRemove(e)}>remove</button>
       </div>
     </div>
   );
