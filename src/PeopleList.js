@@ -43,6 +43,15 @@ const PeopleList = () => {
     setPeople(newPeople);
     
   }
+  
+  function handleRemove1(e) {
+    const removePeople = people.filter(item => item !== newName);
+    setPeople(removePeople);
+
+  }
+
+  
+  
 
   return (
     <div>
@@ -62,6 +71,7 @@ const PeopleList = () => {
         </label>
         <button onClick={addNewPerson}>Add person</button>
         <button onClick={(e) => handleRemove(e)}>remove</button>
+        <button onClick={(e) => handleRemove1(e)}>matching input</button>
       </div>
     </div>
   );
